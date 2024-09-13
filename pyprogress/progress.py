@@ -51,14 +51,20 @@ class ProgressBar:
         return f'[{yellow}{self.message}{black}]:\tCompleted {blue}{percentage}%{black}\t{green}{self.value} / {self.max}{black} failed: {red}{self.failed_iterations} ({fail_percent})%{black}\t{purple}[{self.calc_iter_time()}s / iter]{black}'
 
     def get_failed_percent(self):
+        if self.iterations == 0:
+            return float('inf')
         fail_percent = int(100 * self.failed_iterations / self.iterations)
         return fail_percent
 
     def get_percent(self):
+        if self.max == 0:
+            return 100
         percentage = int(100 * self.value / self.max)
         return percentage
 
     def calc_iter_time(self):
+        if self.iterations == 0:
+            return float('inf')
         return round((time.time() - self.first_start) / self.iterations, 2)
 
     def print(self) -> 'ProgressBar':

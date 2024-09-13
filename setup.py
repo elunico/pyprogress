@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pyprogress-elunico",
-    version="0.1.3",
+    version="0.1.4",
     author="Thomas Povinelli",
     author_email="tompov227@gmail.com",
     description="A terminal progress printing utility",
