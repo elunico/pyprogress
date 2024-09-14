@@ -14,5 +14,5 @@ if [[ "$REPLY" == 'y' ]]; then
 else
   echo 'Update the version number first'
   echo "Checking setup.py for version number"
-  echo "|- $(cat setup.py | grep version)"
+  echo "|- $(cat setup.py | grep -n version)"
 fi
